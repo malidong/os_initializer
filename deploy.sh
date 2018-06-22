@@ -8,5 +8,9 @@
 
 WORK_DIR=$(cd `dirname $0`; pwd) 
 
-cp ~/.vimrc ~/.vimrc_backup
+mkdir -p ~/.vim/autoload ~/.vim/bundle && \
+curl -LSso ~/.vim/autoload/pathogen.vim https://tpo.pe/pathogen.vim
+
+git clone https://github.com/scrooloose/nerdtree.git ~/.vim/bundle/nerdtree
+
 cp -R ${WORK_DIR}/vim_conf/* ~/
