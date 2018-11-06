@@ -20,14 +20,14 @@ cp -R ${WORK_DIR}/aria2_conf/* ~/.aria2/
 
 # install pyenv
 git clone https://github.com/yyuu/pyenv.git ~/.pyenv
-cat << EOF >>
+cat << EOF >> ~/.bash_profile
 export PYENV_ROOT=$HOME/.pyenv
 export PATH=$PYENV_ROOT/bin:$PATH
 eval "$(pyenv init -)"
 EOF
 
 git clone https://github.com/yyuu/pyenv-virtualenv.git ~/.pyenv/plugins/pyenv-virtualenv
-cat << EOF >>
+cat << EOF >> ~/.bash_profile
 eval "$(pyenv virtualenv-init -)"
 EOF
 pyenv install 3.7.1
