@@ -18,17 +18,32 @@ cp -R ${WORK_DIR}/vim_conf/* ~/
 mkdir -p ~/.aria2
 cp -R ${WORK_DIR}/aria2_conf/* ~/.aria2/ 
 
-# install pyenv
+# install pyenv python3.7.1
+
+if [`cat /etc/os-release|grep CentOS|wc -l` -gt 0];
+then
+    PACKAGE_MANAGER='yum'
+    PAKAGES='gcc zlib-dev openssl-devel bzip2-devel libffi-devel bzip2-devel openssl-devel readline-devel libsqlite3x-devel'
+elif [`cat /etc/os-release|grep Ubuntu|wc -l` -gt 0];
+then
+    PACKAGE_MANAGER='apt-get'
+    PAKAGES='gcc bzip2 libbz2-dev libsqlite3-dev libreadline-dev libffi-dev'
+else
+    exit(1)
+fi
+
+${PACKAGE_MANAGER} install ${PAKAGES}
 git clone https://github.com/yyuu/pyenv.git ~/.pyenv
 cat << EOF >> ~/.bash_profile
-export PYENV_ROOT=$HOME/.pyenv
-export PATH=$PYENV_ROOT/bin:$PATH
-eval "$(pyenv init -)"
+export PYENV_ROOT=\$HOME/.pyenv
+export PATH=\$PYENV_ROOT/bin:\$PATH
+eval "\$(pyenv init -)"
 EOF
-
+source ~/.bash_profile
 git clone https://github.com/yyuu/pyenv-virtualenv.git ~/.pyenv/plugins/pyenv-virtualenv
 cat << EOF >> ~/.bash_profile
 eval "$(pyenv virtualenv-init -)"
 EOF
+source ~/.bash_profile
 pyenv install 3.7.1
 pyenv global 3.7.1
