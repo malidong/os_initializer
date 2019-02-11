@@ -43,7 +43,7 @@ EOF
 source ~/.bash_profile
 git clone https://github.com/yyuu/pyenv-virtualenv.git ~/.pyenv/plugins/pyenv-virtualenv
 cat << EOF >> ~/.bash_profile
-eval "$(pyenv virtualenv-init -)"
+eval "\$(pyenv virtualenv-init -)"
 EOF
 source ~/.bash_profile
 pyenv install 3.7.1
