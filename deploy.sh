@@ -33,7 +33,7 @@ else
     exit(1)
 fi
 
-${PACKAGE_MANAGER} install ${PAKAGES}
+${PACKAGE_MANAGER} install -y ${PAKAGES}
 git clone https://github.com/yyuu/pyenv.git ~/.pyenv
 cat << EOF >> ~/.bash_profile
 export PYENV_ROOT=\$HOME/.pyenv
