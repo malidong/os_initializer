@@ -1,4 +1,4 @@
-#! /bin/sh
+#! /bin/bash
 #
 # deploy.sh
 # Copyright (C) 2018 lidong.ma <lidong.ma@o-09365-mac.local>
