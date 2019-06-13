@@ -28,7 +28,7 @@ then
 elif [`cat /etc/os-release|grep Ubuntu|wc -l` -gt 0];
 then
     PACKAGE_MANAGER='apt-get'
-    PAKAGES='libmysqlclient-dev gcc bzip2 libbz2-dev libsqlite3-dev libreadline-dev libffi-dev automake autoconf libtool make curl'
+    PAKAGES='libmysqlclient-dev gcc tk-dev liblzma-dev libffi-dev xz-utils libncursesw5-dev libreadline-dev libncurses5-dev llvm libsqlite3-dev bzip2 libbz2-dev libsqlite3-dev libbz2-dev zlib1g-dev libreadline-dev libffi-dev automake autoconf libtool libssl-dev make curl build-essential'
 else
     exit(1)
 fi
