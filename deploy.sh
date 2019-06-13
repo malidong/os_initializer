@@ -24,11 +24,11 @@ cp -R ${WORK_DIR}/aria2_conf/* ~/.aria2/
 if [`cat /etc/os-release|grep CentOS|wc -l` -gt 0];
 then
     PACKAGE_MANAGER='yum'
-    PAKAGES='gcc zlib-dev openssl-devel bzip2-devel libffi-devel bzip2-devel openssl-devel readline-devel libsqlite3x-devel'
+    PAKAGES='gcc zlib-dev openssl-devel bzip2-devel libffi-devel bzip2-devel openssl-devel readline-devel libsqlite3x-devel automake autoconf libtool make curl'
 elif [`cat /etc/os-release|grep Ubuntu|wc -l` -gt 0];
 then
     PACKAGE_MANAGER='apt-get'
-    PAKAGES='libmysqlclient-dev gcc bzip2 libbz2-dev libsqlite3-dev libreadline-dev libffi-dev'
+    PAKAGES='libmysqlclient-dev gcc bzip2 libbz2-dev libsqlite3-dev libreadline-dev libffi-dev automake autoconf libtool make curl'
 else
     exit(1)
 fi
