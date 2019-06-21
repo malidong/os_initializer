@@ -21,11 +21,11 @@ cp -R ${WORK_DIR}/aria2_conf/* ~/.aria2/
 
 # install pyenv python3.7.1
 
-if [`cat /etc/os-release|grep CentOS|wc -l` -gt 0];
+if [`lsb_release -a|grep CentOS|wc -l` -gt 0];
 then
     PACKAGE_MANAGER='yum'
     PAKAGES='gcc zlib-dev openssl-devel bzip2-devel libffi-devel bzip2-devel openssl-devel readline-devel libsqlite3x-devel automake autoconf libtool make curl'
-elif [`cat /etc/os-release|grep Ubuntu|wc -l` -gt 0];
+elif [`lsb_release -a|grep Ubuntu|wc -l` -gt 0];
 then
     PACKAGE_MANAGER='apt-get'
     PAKAGES='libmysqlclient-dev gcc tk-dev liblzma-dev libffi-dev xz-utils libncursesw5-dev libreadline-dev libncurses5-dev llvm libsqlite3-dev bzip2 libbz2-dev libsqlite3-dev libbz2-dev zlib1g-dev libreadline-dev libffi-dev automake autoconf libtool libssl-dev make curl build-essential'
