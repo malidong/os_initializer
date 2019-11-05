@@ -27,7 +27,7 @@ then
     PAKAGES='gcc zlib-dev openssl-devel bzip2-devel libffi-devel bzip2-devel openssl-devel readline-devel libsqlite3x-devel automake autoconf libtool make curl'
 elif [`lsb_release -a|grep Ubuntu|wc -l` -gt 0];
 then
-    PACKAGE_MANAGER='apt-get'
+    PACKAGE_MANAGER='sudo apt-get'
     PAKAGES='libmysqlclient-dev gcc tk-dev liblzma-dev libffi-dev xz-utils libncursesw5-dev libreadline-dev libncurses5-dev llvm libsqlite3-dev bzip2 libbz2-dev libsqlite3-dev libbz2-dev zlib1g-dev libreadline-dev libffi-dev automake autoconf libtool libssl-dev make curl build-essential'
 else
     exit(1)
@@ -46,5 +46,5 @@ cat << EOF >> ~/.bash_profile
 eval "\$(pyenv virtualenv-init -)"
 EOF
 source ~/.bash_profile
-pyenv install 3.7.1
-pyenv global 3.7.1
+CONFIGURE_OPTS="--enable-optimizations" pyenv install 3.7.4
+pyenv global 3.7.4
