@@ -1,1 +1,1 @@
-9dc24b5dcf19558e32360f362e6fc6ef8dc2146f0f7e13eb5793ffc8db722aaa
+alias temp='/opt/vc/bin/vcgencmd measure_temp'
