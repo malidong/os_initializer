@@ -1,0 +1,15 @@
+[Unit]
+Description = Aria2c Download Manager
+After = remote-fs.target network-online.target
+Wants = network-online.target
+
+[Service]
+User = pi
+Group = pi
+Type = simple
+ExecStart = /usr/bin/docker start portainer
+Restart = no
+RestartSec = 5
+
+[Install]
+WantedBy = multi-user.target

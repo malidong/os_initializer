@@ -1,0 +1,17 @@
+[Unit]
+Description=Aria2c download manager
+Requires=network.target
+After=dhcpcd.service
+
+[Service]
+Type=forking
+User = kodi
+Group = kodi
+RemainAfterExit=yes
+ExecStart=/usr/bin/aria2c --conf-path=/home/kodi/.aria2/aria2.conf -D
+ExecReload=/usr/bin/kill -HUP $MAINPID
+RestartSec=1min
+Restart=on-failure
+
+[Install]
+WantedBy = multi-user.target
