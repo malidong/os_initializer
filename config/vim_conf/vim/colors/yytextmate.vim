@@ -67,4 +67,3 @@ if has("gui_running")
 	:hi SpellErrors guifg=#F9F9F9 guibg=#BF0013
 end
 
-
